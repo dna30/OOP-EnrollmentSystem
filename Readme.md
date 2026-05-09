@@ -38,6 +38,8 @@
 
 **5. Tuition Fee: showcasing different plans (A/B/C).**
 
+**Note: Plan A includes a 3% discount calculation.**
+
 ![TF Plan A.png](src/main/resources/images/TF%20Plan%20A.png)
 ![TF Plan B.png](src/main/resources/images/TF%20Plan%20B.png)
 ![TF Plan C.png](src/main/resources/images/TF%20Plan%20C.png)
