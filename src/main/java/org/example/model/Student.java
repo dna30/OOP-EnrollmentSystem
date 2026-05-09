@@ -1,13 +1,18 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student extends Person {
     private String program;
     private TuitionFeePayment paymentTransaction;
+    private List<Course> courseList;
 
     // No-args Constructor
     public Student(){
         super();
         this.paymentTransaction = new TuitionFeePayment();
+        this.courseList = new ArrayList<>();
     }
 
     // Constructor
@@ -15,6 +20,7 @@ public class Student extends Person {
         super(PersonID, PersonName);
         this.program = program;
         this.paymentTransaction = new TuitionFeePayment();
+        this.courseList = new ArrayList<>();
     }
 
     public void setProgram(String program){
@@ -29,8 +35,9 @@ public class Student extends Person {
         return paymentTransaction;
     }
 
+
     @Override
     public void mainTask() {
-        System.out.println("Studying");
+        System.out.println("Studying " + program);
     }
 }

@@ -4,17 +4,16 @@ import org.example.model.Student;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StudentRegistration {
+public class StudentRegistration implements StudentRegistrationInterface {
     private ArrayList<Student> studentArrayList = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
-    // Create
-    public void addStudent(Student student){
+    @Override
+    public void addStudent(Student student) {
         studentArrayList.add(student);
-        System.out.println("Student Successfully Saved!");
     }
 
-    // Read
+    @Override
     public void displayAll() {
         if (studentArrayList.isEmpty()){
             System.out.println("There are no students registered yet.");
@@ -32,7 +31,8 @@ public class StudentRegistration {
         }
     }
 
-    // Update
+
+    @Override
     public void  updateStudent(Student student){
         boolean found = false;
         for (int i = 0; i < studentArrayList.size(); i++) {
@@ -57,18 +57,23 @@ public class StudentRegistration {
         }
     }
 
-    // Delete
+    @Override
     public String delete(Student student){
         for(int i = 0; i < studentArrayList.size(); i++){
             if(studentArrayList.get(i).getPersonID().equals(student.getPersonID())){
                 studentArrayList.remove(i);
-                return "Student Successfully Deleted!";
+                return "Successfully Deleted!\n";
             }
         }
-        return "No such student found!";
+        return "No such student found!\n";
     }
 
-    // Finder for the Tuition in Menu C
+    @Override
+    public Student getStudentByID(String personID) {
+        return getStudent(personID);
+    }
+
+    @Override
     public Student getStudent(String personID){
         for (Student s : studentArrayList){
             if(s.getPersonID().equals(personID)){

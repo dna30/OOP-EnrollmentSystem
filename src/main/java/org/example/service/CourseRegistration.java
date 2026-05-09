@@ -5,17 +5,17 @@ import org.example.model.Course;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CourseRegistration {
+public class CourseRegistration implements CourseReg {
     private ArrayList<Course> courseArrayList = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
-    // Create
+    @Override
     public void addCourse(Course course){
         courseArrayList.add(course);
     }
 
-    // Read
-    public void displayAll() {
+    @Override
+    public void displayAllCourse() {
         if (courseArrayList.isEmpty()){
             System.out.println("There are no courses registered yet.");
             return;
@@ -37,7 +37,7 @@ public class CourseRegistration {
         }
     }
 
-    // Update
+    @Override
     public void  updateCourse(Course course){
         boolean found = false;
         for (int i = 0; i < courseArrayList.size(); i++) {
@@ -62,8 +62,8 @@ public class CourseRegistration {
         }
     }
 
-    // Delete
-    public String delete(Course course){
+    @Override
+    public String deleteCourse(Course course){
         for(int i = 0; i < courseArrayList.size(); i++){
             if(courseArrayList.get(i).getcourseID().equals(course.getcourseID())){
                 courseArrayList.remove(i);
@@ -71,5 +71,15 @@ public class CourseRegistration {
             }
         }
         return "No such course exists!";
+    }
+
+    @Override
+    public Course getCourse(String courseID) {
+        for (Course c : courseArrayList){
+            if (c.getcourseID().equals(courseID)){
+                return c;
+            }
+        }
+        return null;
     }
 }

@@ -15,3 +15,5 @@
 ---
 **3. Description:** This part is about Abstraction implementation.
 ![Screenshot (Abstraction).png](src/main/resources/images/Screenshot%20%28Abstraction%29.png)
+
+---
