@@ -49,3 +49,5 @@
 ![SystemTest(JUnit).png](src/main/resources/images/SystemTest%28JUnit%29.png)
 
 ---
+
+**Thank you!**
