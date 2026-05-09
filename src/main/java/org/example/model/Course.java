@@ -6,47 +6,44 @@ public class Course {
     private String courseProgram;
     private Instructor instructor;
 
-    //no-args constructor
-    public Course(){
-
+    public Course() {
     }
 
-    // Constructor
-    public Course(String CourseID, String courseName, String courseProgram){
-        this.courseID = CourseID;
+    public Course(String courseID, String courseName, String courseProgram) {
+        this.courseID = courseID;
         this.courseName = courseName;
         this.courseProgram = courseProgram;
+    }
+
+    public String getcourseID() {
+        return courseID;
+    }
+
+    public String getcourseName() {
+        return courseName;
+    }
+
+    public String getCourseProgram() {
+        return courseProgram;
     }
 
     public Instructor getInstructor() {
         return instructor;
     }
 
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
-    }
-
-    public String getcourseID(){
-        return courseID;
-    }
-
-    public void setcourseID(String courseID){
+    public void setcourseID(String courseID) {
         this.courseID = courseID;
     }
 
-    public String getcourseName(){
-        return courseName;
-    }
-
-    public void setcourseName(String courseName){
+    public void setcourseName(String courseName) {
         this.courseName = courseName;
     }
 
-    public void setcourseProgram(String courseProgram){
+    public void setcourseProgram(String courseProgram) {
         this.courseProgram = courseProgram;
     }
 
-    public String getCourseProgram(){
-        return courseProgram;
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 }
